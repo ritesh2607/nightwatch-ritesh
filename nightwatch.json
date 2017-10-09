@@ -1,0 +1,68 @@
+{
+  "src_folders" : ["./nightwatch/test", "./nightwatch/test/review","./nightwatch/test/myaccount","./nightwatch/test/cartRB","./nightwatch/test/practice"],
+  "output_folder" : "reports",
+  "custom_commands_path" : "./nightwatch/commands",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "",
+  "globals_path" : "./nightwatch/globals.js",
+  "detailed_output": false,
+  "request_timeout_options": {
+    "timeout": 30000,
+    "retry_attempts": 5
+  },
+  "selenium" : {
+    "start_process" : true,
+    "server_path" : "./node_modules/selenium-standalone-jar/bin/selenium-server-standalone-3.0.1.jar",
+    "log_path" : "",
+    "port" : 4444,
+    "cli_args" : {
+      "webdriver.chrome.driver" : "./node_modules/chromedriver/bin/chromedriver"
+    }
+  },
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://test.assos.com",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "desiredCapabilities" : {
+        "browserName" : "chrome",
+        "javascriptEnabled" : true,
+        "acceptSslCerts" : true,
+        "chromeOptions": {
+        "args": [
+            "window-size=1980,1024"
+        ]
+        }
+      }
+    },
+    "production" : {
+      "launch_url" : "https://assos.com",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "desiredCapabilities" : {
+        "browserName" : "chrome",
+        "javascriptEnabled" : true,
+        "acceptSslCerts" : true,
+        "chromeOptions": {
+          "args" : ["start-fullscreen"]
+        }
+      }
+    },
+
+    "chrome" : {
+      "desiredCapabilities": {
+        "browserName": "chrome"
+      }
+    }
+  }
+}
